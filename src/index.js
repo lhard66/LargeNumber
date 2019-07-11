@@ -20,36 +20,32 @@ export function add(strNum1, strNum2) {
   const num2Len = strNum2.length;
   const loop = num1Len > num2Len ? num1Len : num2Len;
 
-  const sum = [];
-  let isCarry = false;
+  let sum = '';
+  let carry = 0;
   for (let i = 0; i < loop; i++) {
+    // 问题：更好的方式是使用while循环，通过下标取每个字符串的值。
     const strNum1Item = strNum1.slice(i, i + 1) || 0;
     const strNum2Item = strNum2.slice(i, i + 1) || 0;
-
+    // 问题：也可以通过字符串减0（'2' - 0），隐式类型转换为数值类型。
     const num1Item = parseInt(strNum1Item);
     const num2Item = parseInt(strNum2Item);
 
-    sumItem = num1item + num2Item;
-    // 处理进位
-    if (isCarry) {
-      sumItem += 1;
-      isCarry = false;
-    }
+    let sumItem = num1Item + num2Item + carry;
 
-    // 处理大于9的情况
+    // 处理大于9的情况，进位问题。
     if (sumItem > 9) {
-      sumItem = sumItem % 10;
-      isCarry = true;
+      sumItem = sumItem - 10; // 问题：这里不需要取余，直接减10就可以。
+      carry = 1;
     }
 
-    sum.push(sumItem.toString());
+    sum += sumItem; // 问题：这里不需要toString()，因为sum初始化时就是String
   }
 
-  // 数组转为字符串数字 [1, 3, 7, 2]
-  return sum.reduce((total, currentValue) => {
-    return total + currentValue;
-  })
+  if (carry) {
+    sum = carry + sum;
+  }
 
+  return sum;
 }
 
 function checkIsString(arrNum) {
