@@ -19,6 +19,6 @@
     "plus"
   ],
   "publishConfig" : {
-    "registry" : "http://localhost:8081/repository/npm-private/"
+    "registry" : "http://192.168.3.32:9091/repository/npm-private/"
   }
 }
