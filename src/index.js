@@ -36,6 +36,8 @@ export function add(strNum1, strNum2) {
     if (sumItem > 9) {
       sumItem = sumItem - 10; // 问题：这里不需要取余，直接减10就可以。
       carry = 1;
+    } else {
+      carry = 0;
     }
 
     sum += sumItem; // 问题：这里不需要toString()，因为sum初始化时就是String

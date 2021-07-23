@@ -9,6 +9,11 @@
   },
   "author": "LiuTianqing",
   "license": "ISC",
+  "homepage": "https://github.com/tianqing617/LargeNumber#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianqing617/LargeNumber.git"
+  },
   "devDependencies": {
     "terser-webpack-plugin": "^1.3.0",
     "webpack": "^4.35.3",
@@ -17,8 +22,5 @@
   "keywords": [
     "large number",
     "plus"
-  ],
-  "publishConfig" : {
-    "registry" : "http://192.168.3.32:9091/repository/npm-private/"
-  }
+  ]
 }
