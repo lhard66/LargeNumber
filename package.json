@@ -22,5 +22,8 @@
   "keywords": [
     "large number",
     "plus"
-  ]
+  ],
+  "publishConfig" : {
+    "registry" : "http://localhost:8081/repository/npm-private/"
+  }
 }
